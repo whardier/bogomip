@@ -6,12 +6,12 @@ Blog Posts
 .. latest::
     :glob:
 
-    */*/posts/*/*
+    2013/*/*/*
 
 **Archive**
 
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 3
     :glob:
     :titlesonly:
     

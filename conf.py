@@ -64,7 +64,7 @@ release = '0.0.0'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build', 'external']
+exclude_patterns = ['_build', '_themes', 'external']
 
 # The reST default role (used for this markup: `text`) to use for all documents.
 #default_role = None
@@ -91,8 +91,10 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#html_theme = 'sphinx_rtd_theme'
-html_theme = 'nature'
+if os.environ.get('READTHEDOCS', None):
+    html_theme = 'sphinx_rtd_theme'
+else:
+    html_theme = 'nature'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -100,14 +102,14 @@ html_theme = 'nature'
 #html_theme_options = {}
 
 # Add any paths that contain custom themes here, relative to this directory.
-#html_theme_path = ['_themes/sphinx_rtd_theme']
+html_theme_path = ['_themes/sphinx_rtd_theme']
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-#html_title = None
+html_title = "bogomip"
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
-#html_short_title = None
+#html_short_title =
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
@@ -184,7 +186,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'Bogomip.tex', u'Bogomip Documentation',
+  ('index', 'Bogomip.tex', u'Bogomip',
    u'Shane R. Spencer', 'manual'),
 ]
 
@@ -214,7 +216,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'bogomip', u'Bogomip Documentation',
+    ('index', 'bogomip', u'Bogomip',
      [u'Shane R. Spencer'], 1)
 ]
 
@@ -228,7 +230,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'Bogomip', u'Bogomip Documentation',
+  ('index', 'Bogomip', u'Bogomip',
    u'Shane R. Spencer', 'Bogomip', 'One line description of project.',
    'Miscellaneous'),
 ]
@@ -244,9 +246,28 @@ texinfo_documents = [
 
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
-feed_base_url = "http://bogomip.com/"
+feed_base_url = "http://www.bogomip.com/"
 feed_description = "Bogomip"
 feed_filename = 'rss.xml'
 feed_title = 'Bogomip'
 
+
+from docutils import nodes
+
+from sphinx.directives import TocTree
+from docutils.parsers.rst import directives
+from sphinx.util.compat import Directive
+
+class NewTocTree(TocTree):
+    option_spec = dict(TocTree.option_spec,
+                       reversed=directives.flag)
+
+    def run(self):
+        rst = super(NewTocTree, self).run()
+        if 'reversed' in self.options:
+            rst[0][0]['entries'].reverse()
+        return rst
+
+def setup(app):
+    app.add_directive('toctree', NewTocTree)
 

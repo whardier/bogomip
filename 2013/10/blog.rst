@@ -8,5 +8,4 @@
     :glob:
     :titlesonly:
 
-    posts/*/*
-
+    */*

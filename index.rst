@@ -3,10 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Bogomip!
-===================
+Who am I really, Who are you?
+=============================
 
-Contents:
+I'm Shane Spencer.  Glad to meet you.
+
+Blog
+----
 
 ..  toctree::
     :maxdepth: 2
@@ -18,8 +21,10 @@ Contents:
 .. latest::
     :glob:
 
-    */*/posts/*/*
+    2013/*/*/*
 
+Stuffs
+------
 * :ref:`genindex`
 * :ref:`search`
 
