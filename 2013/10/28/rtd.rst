@@ -35,3 +35,9 @@ works out.
 
 Also will need to add back in `Disqus`_ comments which won't be that difficult.. 
 I already have code for sphinx for that.
+
+Comments
+--------
+
+.. disqus:: bogomip rtdmove
+
