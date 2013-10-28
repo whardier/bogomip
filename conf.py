@@ -241,8 +241,11 @@ texinfo_documents = [
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
 #texinfo_show_urls = 'footnote'
 
+on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+
 feed_base_url = "http://bogomip.com/"
 feed_description = "Bogomip"
 feed_filename = 'rss.xml'
 feed_title = 'Bogomip'
+
 
