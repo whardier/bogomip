@@ -7,6 +7,7 @@
 .. _mongolikecandy: http://mongo-like-candy.readthedocs.org/
 .. _globofs: http://www.globofs.org/
 .. _allyourdatabase: http://allyourdatabase.readthedocs.org/
+.. _disqus: http://disqus.com/
 
 =================================
 Blog migration to readthedocs.org
@@ -27,3 +28,10 @@ The guys on #readthedocs on IRC (freenode) are pretty helpful as well :)
 
 I have to get a few things working out with the theme so that I can add in the 
 RSS XML
+
+There's a few gotchas with how the table of contents works as well and I need to 
+figure out how to set a **parent** page to some degree.  We'll see how well that 
+works out.
+
+Also will need to add back in `Disqus`_ comments which won't be that difficult.. 
+I already have code for sphinx for that.
