@@ -101,6 +101,7 @@ html_theme = 'bootstrap'
 #html_theme_options = {}
 
 html_theme_options = {
+    'navbar_title': "bogomip",
     'bootswatch_theme': "spacelab",
     'source_link_position': "footer",
 }
