@@ -1,2 +1,3 @@
 Sphinx
 external/feed
+sphinx-bootstrap-theme
