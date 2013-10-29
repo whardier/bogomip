@@ -3,28 +3,37 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Who am I really, Who are you?
-=============================
+..  _bogomips: http://en.wikipedia.org/wiki/BogoMips
 
-I'm Shane Spencer.  Glad to meet you.
+Bogus Millions of Instructions Per (Bogomip)
+============================================
 
-Blog
-----
+I'm not sure if you're familiar with `BogoMIPS`_ but it's been around for a 
+while in the Linux community.  It's always been easy for me to see acronyms like 
+**BogoMIPS** as plural, especially when it is a measured unit of something.  It 
+makes perfect sense that a BogoMIP is a single unit of a BogoMIPS measurement.
+
+So.. I've held on to this domain for quite some time.  I love phrases, 
+expressions, and strange ways to say things.  Bogomip.com is just one of those 
+things and it is my attempt to tie myself to the Linux and Free and Open Source 
+through obscure references.
+
+My name is Shane.. and this is my space for stuff on the Internet.
+
+Recent Posts
+------------
 
 ..  toctree::
-    :maxdepth: 2
+    :titlesonly:
     :glob:
     :hidden:
 
-    blog
+    contact
+    posts/blog
+
 
 .. latest::
     :glob:
 
-    2013/*/*/*
-
-Stuffs
-------
-* :ref:`genindex`
-* :ref:`search`
+    posts/*/*/*/*
 
